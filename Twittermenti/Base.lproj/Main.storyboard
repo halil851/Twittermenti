@@ -19,18 +19,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-r8-Fd9">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="MLc-Nf-Ipl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="MLc-Nf-Ipl">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-2h-KsB">
-                                                <rect key="frame" x="142.66666666666666" y="0.0" width="108" height="570"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="😐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-2h-KsB">
+                                                <rect key="frame" x="131.66666666666666" y="0.0" width="129.99999999999997" height="322.33333333333331"/>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-S9-vq2">
+                                                <rect key="frame" x="8.6666666666666572" y="402.33333333333331" width="376" height="155.66666666666669"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results from the 100 most recently shared tweets containing the word you want to see the prediction for." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiA-eY-Cz7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="376" height="64.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positive Thoughts: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gC-KT-ZHT" userLabel="Pos">
+                                                        <rect key="frame" x="115.33333333333333" y="74.666666666666686" width="145.33333333333337" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Negative Thoughts: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-9h-FsW" userLabel="Neg">
+                                                        <rect key="frame" x="110.99999999999999" y="105" width="153.66666666666663" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8G-Nc-Gu1" userLabel="Result">
+                                                        <rect key="frame" x="155.66666666666669" y="135.33333333333331" width="64.666666666666686" height="20.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How do people feel about..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-ee-vOF">
-                                                <rect key="frame" x="0.0" y="644" width="393" height="50"/>
+                                                <rect key="frame" x="0.0" y="638" width="393" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="6wm-BH-uBw"/>
                                                 </constraints>
@@ -76,6 +105,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="negLabel" destination="hd4-9h-FsW" id="jR7-ql-9wO"/>
+                        <outlet property="posLabel" destination="3gC-KT-ZHT" id="Fy7-Pw-bCn"/>
+                        <outlet property="resultLabel" destination="d8G-Nc-Gu1" id="JKc-hb-weT"/>
                         <outlet property="sentimentLabel" destination="Ep9-2h-KsB" id="RGg-ER-dLz"/>
                         <outlet property="textField" destination="HP9-ee-vOF" id="eKD-X0-T0H"/>
                     </connections>

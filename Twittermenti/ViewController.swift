@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sentimentLabel: UILabel!
     
+    @IBOutlet weak var posLabel: UILabel!
+    @IBOutlet weak var negLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    
     let tweetCount = 100
     
     let sentimentClassifier = TweetSentimentClassifier()
@@ -65,18 +69,24 @@ class ViewController: UIViewController {
             let predictions = try self.sentimentClassifier.predictions(inputs: tweets)
             
             var sentimentScore = 0
+            var posCounter = 0
+            var negCounter = 0
             
             for pred in predictions {
                 let sentiment = pred.label
                 
                 if sentiment == "Pos" {
                     sentimentScore += 1
+                    posCounter += 1
                 } else if sentiment == "Neg" {
                     sentimentScore -= 1
+                    negCounter -= 1
                 }
+
             }
             
-            updateUI(with: sentimentScore)
+            updateUI(with: sentimentScore, posCounter, negCounter)
+            
             
         } catch {
             print("There was an error with making a prediction, \(error)")
@@ -84,8 +94,12 @@ class ViewController: UIViewController {
         
     }
     
-    func updateUI(with sentimentScore: Int) {
-        print(sentimentScore)
+    func updateUI(with sentimentScore: Int, _ posCounter: Int, _ negCounter: Int) {
+        print(sentimentScore, posCounter, negCounter)
+        
+        posLabel.text = String("Positive Thoughts: +\(posCounter)")
+        negLabel.text = String("Negative Thoughts: \(negCounter)")
+        resultLabel.text = String("Results:  \(sentimentScore)")
         
         switch sentimentScore {
         case 20... :

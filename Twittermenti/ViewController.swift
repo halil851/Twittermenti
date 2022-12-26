@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     let sentimentClassifier = TweetSentimentClassifier()
     
-    let swifter = Swifter(consumerKey: "_your_key_here", consumerSecret: "_your_secret_here_")
+//    let swifter = Swifter(consumerKey: "_your_key_here", consumerSecret: "_your_secret_here_")
+    
+    let swifter = Swifter(consumerKey: "LTReJyreyyuz4SWjVABuA1WKI", consumerSecret: "ajf107xfd6869heCG8Ptn8iztfFHBWPIxLkFGvsmoEwI7MKZcz")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,23 +85,24 @@ class ViewController: UIViewController {
     }
     
     func updateUI(with sentimentScore: Int) {
+        print(sentimentScore)
         
-        if sentimentScore > 20 {
+        switch sentimentScore {
+        case 20... :
             self.sentimentLabel.text = "😍"
-        } else if sentimentScore > 10 {
+        case 11...20 :
             self.sentimentLabel.text = "😀"
-        } else if sentimentScore > 0 {
+        case 1...10 :
             self.sentimentLabel.text = "🙂"
-        } else if sentimentScore == 0 {
+        case 0 :
             self.sentimentLabel.text = "😐"
-        } else if sentimentScore > -10 {
+        case (-10)...(-1) :
             self.sentimentLabel.text = "😕"
-        } else if sentimentScore > -20 {
+        case (-20)...(-11) :
             self.sentimentLabel.text = "😡"
-        } else {
+        default:
             self.sentimentLabel.text = "🤮"
         }
     }
-    
 }
 

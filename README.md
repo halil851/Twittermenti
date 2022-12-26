@@ -1,13 +1,1 @@
-
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
-
-#  Twittermenti
-
-
-
-
->This is a companion project to The App Brewery's Complete App Developement Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-Note: You will need to use your own Swifter consumer key and secret. 
-
-![End Banner](Documentation/readme-end-banner.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-26 at 17 32 34](https://user-images.githubusercontent.com/102283100/209559262-738b3b65-4f47-4037-b3b0-c86617792ed2.png)![Simulator Screen Shot - iPhone 14 Pro - 2022-12-26 at 17 34 06](https://user-images.githubusercontent.com/102283100/209559258-55a03c1c-c3fc-4131-b8a3-600b903b3e9c.png)![Simulator Screen Shot - iPhone 14 Pro - 2022-12-26 at 17 32 52](https://user-images.githubusercontent.com/102283100/209559266-37145c6f-3efb-4613-8403-d6f61b7848fc.png)
